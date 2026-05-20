@@ -21,21 +21,21 @@
 
 						<VerticalStackLayout Padding="10">
 
-							<Label Text="{Binding Username}"
+                            <Label Text="{Binding Username}"
                                    TextColor="#00C853"
                                    FontSize="18"/>
 
-							<Label Text="{Binding Winnings, StringFormat='Win: {0:F2}'}"
+                            <Label Text="{Binding ResultText}"
                                    TextColor="White"/>
 
-							<Label Text="{Binding Multiplier, StringFormat='Multiplier: {0:F2}x'}"
-                                   TextColor="White"/>
+                            <Label Text="{Binding Multiplier, StringFormat='Multiplier: {0:F2}x'}"
+                                    TextColor="White"/>
 
-							<Label Text="{Binding Date}"
+                            <Label Text="{Binding Date}"
                                    TextColor="Gray"
                                    FontSize="12"/>
 
-						</VerticalStackLayout>
+                        </VerticalStackLayout>
 
 					</Border>
 
