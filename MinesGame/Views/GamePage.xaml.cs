@@ -1,4 +1,4 @@
-﻿using MinesGame.Models;
+using MinesGame.Models;
 using MinesGame.Services;
 using System.Collections.ObjectModel;
 
@@ -123,6 +123,31 @@ public partial class GamePage : ContentPage
             currentMultiplier = multiplier * 0.99;
 
             MultiplierLabel.Text = $"Multiplier: {currentMultiplier:F2}x";
+
+            if (revealedSafeTiles == totalTiles - mineCount)
+            {
+                gameEnded = true;
+
+                double winnings = currentBet * currentMultiplier;
+                balance += winnings;
+
+                Preferences.Set("balance", balance);
+                BalanceLabel.Text = $"Balance: {balance:F2}";
+
+                await databaseService.AddGame(new GameHistory
+                {
+                    Username = Preferences.Get("username", "Player"),
+                    Date = DateTime.Now,
+                    Win = true,
+                    RevealedTiles = revealedSafeTiles,
+                    Multiplier = currentMultiplier,
+                    Winnings = winnings
+                });
+
+                await DisplayAlert("You Win!",
+                    $"All safe tiles revealed!\nWon {winnings:F2}",
+                    "OK");
+            }
         }
     }
 
