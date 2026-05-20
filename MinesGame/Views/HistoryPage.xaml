@@ -1,0 +1,49 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinesGame.Views.HistoryPage"
+             BackgroundColor="#121212">
+
+	<VerticalStackLayout Padding="20">
+
+		<Label Text="Game History"
+               FontSize="28"
+               TextColor="#00C853"
+               FontFamily="Orbitron" />
+
+		<CollectionView x:Name="HistoryView">
+
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+
+					<Border Stroke="#00C853"
+                            StrokeThickness="2"
+                            Margin="5">
+
+						<VerticalStackLayout Padding="10">
+
+							<Label Text="{Binding Username}"
+                                   TextColor="#00C853"
+                                   FontSize="18"/>
+
+							<Label Text="{Binding Winnings, StringFormat='Win: {0:F2}'}"
+                                   TextColor="White"/>
+
+							<Label Text="{Binding Multiplier, StringFormat='Multiplier: {0:F2}x'}"
+                                   TextColor="White"/>
+
+							<Label Text="{Binding Date}"
+                                   TextColor="Gray"
+                                   FontSize="12"/>
+
+						</VerticalStackLayout>
+
+					</Border>
+
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+
+		</CollectionView>
+
+	</VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,86 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinesGame.Views.GamePage"
+             BackgroundColor="#121212">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="MINES"
+                   FontSize="32"
+                   TextColor="#00C853"
+                   HorizontalOptions="Center"
+                   FontFamily="Orbitron" />
+
+            <Label x:Name="BalanceLabel"
+                   Text="Balance: 100.00"
+                   TextColor="White"
+                   FontSize="22"/>
+
+            <Entry x:Name="BetEntry"
+                   Placeholder="Bet Amount"
+                   Text="10"
+                   Keyboard="Numeric"
+                   TextColor="White"
+                   PlaceholderColor="Gray"/>
+
+            <Stepper x:Name="MineStepper"
+                     Minimum="1"
+                     Maximum="24"
+                     Increment="1"
+                     Value="5"/>
+
+            <Label x:Name="MineCountLabel"
+                   Text="5 Mines"
+                   TextColor="White"/>
+
+            <Label x:Name="MultiplierLabel"
+                   Text="Multiplier: 1.00x"
+                   TextColor="#00C853"
+                   FontSize="22"/>
+
+            <Button Text="New Game"
+                    Clicked="OnNewGameClicked"
+                    BackgroundColor="#00C853"
+                    TextColor="Black" />
+
+            <Button Text="Cash Out"
+                    Clicked="OnCashoutClicked"
+                    BackgroundColor="#00C853"
+                    TextColor="Black"/>
+
+            <CollectionView x:Name="BoardView"
+                            SelectionMode="None">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="5" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border Stroke="#00C853"
+                                StrokeThickness="2"
+                                Margin="4">
+
+                            <ImageButton Source="{Binding ImageSource}"
+                                         BackgroundColor="{Binding TileColor}"
+                                         Clicked="OnTileClicked"
+                                         HeightRequest="60"
+                                         WidthRequest="60"
+                                         Aspect="AspectFit"/>
+
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

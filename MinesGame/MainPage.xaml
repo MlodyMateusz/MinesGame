@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MinesGame.Views"
+             x:Class="MinesGame.MainPage"
+             BarBackgroundColor="#121212"
+             BarTextColor="White">
+
+    <views:GamePage Title="Game" />
+    <views:HistoryPage Title="History" />
+    <views:SettingsPage Title="Settings" />
+
+</TabbedPage>

@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinesGame.Views.SettingsPage"
+             BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="Settings"
+               FontSize="30"
+               TextColor="#00C853"
+               FontFamily="Orbitron" />
+
+        <Entry x:Name="UsernameEntry"
+               Placeholder="Username"
+               TextColor="White"
+               PlaceholderColor="Gray" />
+
+        <Button Text="Save"
+                Clicked="OnSaveClicked"
+                BackgroundColor="#00C853"
+                TextColor="Black" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
