@@ -1,4 +1,4 @@
-﻿using SQLite;
+using SQLite;
 
 namespace MinesGame.Models;
 
@@ -18,4 +18,9 @@ public class GameHistory
     public double Multiplier { get; set; }
 
     public double Winnings { get; set; }
+
+    // 🔥 NOWE - tylko do UI, NIE do bazy
+    public string ResultText => Win
+        ? $"Win: {Winnings:F2}"
+        : $"Lose: -{Math.Abs(Winnings):F2}";
 }
