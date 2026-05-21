@@ -1,3 +1,15 @@
+# Plan Projektu - Mines Game
+
+## Intefejs graficzny:
+- stworzenie głównego menu aplikacji,
+- dodanie zakładek przy użyciu TabbedPage,
+- przygotowanie okna gry,
+- przygotowanie okna historii,
+- przygotowanie ustawień użytkownika,
+- dodanie customowych fontów,
+- dodanie obrazów w formacie PNG
+---
+
 # Mines Game
 
 ## Opis projektu
