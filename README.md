@@ -58,7 +58,3 @@
 - optymalizacja działania aplikacji
 
 ---
-
-## Źródła
-
-- https://medium.com/@hemantsp/know-backend-of-stakes-mine-game-073536e201c9
