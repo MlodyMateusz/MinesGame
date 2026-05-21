@@ -1,6 +1,6 @@
 # Plan Projektu - Mines Game
 
-## Intefejs graficzny:
+## 1. Intefejs graficzny:
 - stworzenie głównego menu aplikacji,
 - dodanie zakładek przy użyciu TabbedPage,
 - przygotowanie okna gry,
@@ -11,7 +11,7 @@
   
 ---
 
-## Implementacja gry:
+## 2. Implementacja gry:
 - stworzenia planszy 5x5,
 - generowanie min w losowych miejscach na planszy,
 - obsługa kliknięć pól,
@@ -26,7 +26,7 @@
     
 ---
 
-## Baza danych:
+## 3. Baza danych:
 - pobranie NuGeta SQLite,
 - konfiguracja SQLite,
 - stworzenie modelu historii gier,
@@ -35,14 +35,14 @@
   
 ---
 
-## Zapisywanie ustawień:
+## 4. Zapisywanie ustawień:
 - zapis nazwy użytownika,
 - zapis balansu gracza,
 - wykorzystanie SharedPreferences
 
 ---
 
-## Stylizacja aplikacji:
+## 5. Stylizacja aplikacji:
 - dopracowanie wyglądu aplikacji,
 - dodanie Bordera,
 - poprawa czytelności interfejsu,
@@ -50,7 +50,7 @@
 
 ---
 
-## Testowanie aplikacji:
+## 6. Testowanie aplikacji:
 - testowanie działania gry,
 - testowanie zapisu danych,
 - sprawdzenie poprawności działania algorytmu na mnożnik,
