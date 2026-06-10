@@ -211,4 +211,27 @@ public partial class GamePage : ContentPage
 
         GenerateBoard();
     }
+
+    async void OnResetBalanceClicked(object sender, EventArgs e)
+    {
+        bool result = await DisplayAlert(
+            "Reset Balance",
+            "Are you sure you want to reset your balance to 100?",
+            "Yes",
+            "No");
+    
+        if (!result)
+            return;
+    
+        balance = 100.0;
+    
+        Preferences.Set("balance", balance);
+    
+        BalanceLabel.Text = $"Balance: {balance:F2}";
+    
+        await DisplayAlert(
+            "Balance Reset",
+            "Your balance has been reset to 100.00",
+            "OK");
+    }
 }
