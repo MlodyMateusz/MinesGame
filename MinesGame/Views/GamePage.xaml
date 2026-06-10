@@ -50,6 +50,11 @@
                     BackgroundColor="#00C853"
                     TextColor="Black"/>
 
+            <Button Text="Reset Balance"
+                    Clicked="OnResetBalanceClicked"
+                    BackgroundColor="#FF5252"
+                    TextColor="White"/>
+
             <CollectionView x:Name="BoardView"
                             SelectionMode="None">
 
