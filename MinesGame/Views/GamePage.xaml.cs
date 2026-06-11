@@ -156,29 +156,32 @@ public partial class GamePage : ContentPage
         if (gameEnded)
             return;
 
-        gameEnded = true;
-
-        double winnings = currentBet * currentMultiplier;
-
-        balance += winnings;
-
-        Preferences.Set("balance", balance);
-
-        BalanceLabel.Text = $"Balance: {balance:F2}";
-
-        await databaseService.AddGame(new GameHistory
+        else if(MultiplierLabel.Text != "Multiplier: 1.00x")
         {
-            Username = Preferences.Get("username", "Player"),
-            Date = DateTime.Now,
-            Win = true,
-            RevealedTiles = revealedSafeTiles,
-            Multiplier = currentMultiplier,
-            Winnings = winnings
-        });
+            gameEnded = true;
 
-        await DisplayAlert("Cash Out",
-            $"Won {winnings:F2}",
-            "OK");
+            double winnings = currentBet * currentMultiplier;
+
+            balance += winnings;
+
+            Preferences.Set("balance", balance);
+
+            BalanceLabel.Text = $"Balance: {balance:F2}";
+
+            await databaseService.AddGame(new GameHistory
+            {
+                Username = Preferences.Get("username", "Player"),
+                Date = DateTime.Now,
+                Win = true,
+                RevealedTiles = revealedSafeTiles,
+                Multiplier = currentMultiplier,
+                Winnings = winnings
+            });
+
+            await DisplayAlert("Cash Out",
+                $"Won {winnings:F2}",
+                "OK");
+        }
     }
 
     async void OnNewGameClicked(object sender, EventArgs e)
